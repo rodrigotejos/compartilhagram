@@ -50,7 +50,7 @@ module.exports = {
         uploadParams.Key = path.basename(file);
 
         // call S3 to retrieve upload file to specified bucket
-        /*
+        
         s3.upload (uploadParams, function (err, data) {
             if (err) {
                console.log("Error", err);
@@ -58,7 +58,7 @@ module.exports = {
              console.log("Upload Success", data.Location);
             }
         });
-        */
+        
        
             fs.unlinkSync(req.file.path);
 
