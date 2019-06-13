@@ -3,12 +3,12 @@ const Post = require('../models/Post');
 // Load the AWS SDK for Node.js
 const AWS = require('aws-sdk');
 // Set the region 
-AWS.config.update({region: 'sa-east-1'});
+AWS.config.update({region: 'us-east-1'});
 
 // Create S3 service object
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
-bucket = "instagram-resized";
+bucket = "instagram-sp-2";
 
 module.exports = {
 
