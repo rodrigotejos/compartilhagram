@@ -24,7 +24,7 @@ module.exports = {
         return res.json(post)
     },
     async store(req, res){
-        const {author, place, description, hashtag } = req.body;
+        const {author, place, description, hashtags } = req.body;
         const {filename: image} = req.file;
 
         const [name, ext] = image.split('.');
@@ -50,7 +50,7 @@ module.exports = {
         uploadParams.Key = path.basename(file);
 
         // call S3 to retrieve upload file to specified bucket
-        /*
+        
         s3.upload (uploadParams, function (err, data) {
             if (err) {
                console.log("Error", err);
@@ -58,15 +58,16 @@ module.exports = {
              console.log("Upload Success", data.Location);
             }
         });
-        */
+        
        
             fs.unlinkSync(req.file.path);
+            fs.unlinkSync(file);
 
         const post = await Post.create({
             author,
             place,
             description,
-            hashtag,
+            hashtags,
             image: filename,
         });
 
