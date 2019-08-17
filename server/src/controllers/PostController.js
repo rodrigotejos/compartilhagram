@@ -8,12 +8,12 @@ const fs = require('fs')
 const AWS = require('aws-sdk');
 
 // Set the region 
-AWS.config.update({region: 'us-east-1'});
+AWS.config.update({region: 'region'});
 
 // Create S3 service object
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
-bucket = "instagram-sp-2";
+bucket = "bucket-name";
 
 // call S3 to retrieve upload file to specified bucket
 var uploadParams = {Bucket: bucket, Key: '', Body: ''};
