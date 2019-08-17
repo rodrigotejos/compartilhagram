@@ -1,6 +1,6 @@
 # compartilhagram
 
-run node src/index.js
+run: node src/index.js
 
 URl:
   Post:http://localhost:3333/posts
